@@ -19,7 +19,7 @@ app.use(express.static(process.cwd() + "/public"));
 var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
-mongoose.connect("mongodb://localhost/ScraperHomework");
+mongoose.connect("mongodb://localhost/scraper");
 var db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "connection error:"));
