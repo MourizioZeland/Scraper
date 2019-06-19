@@ -13,7 +13,7 @@ router.get("/", function(req, res) {
 });
 
 router.get("/scrape", function(req, res) {
-  request("https://www.nytimes.com/", function(error, response, html) {
+  request("https://www.theverge.com/", function(error, response, html) {
     var $ = cheerio.load(html);
     var titlesArray = [];
 
@@ -23,7 +23,7 @@ router.get("/scrape", function(req, res) {
       result.title = $(this)
         .children("a")
         .text();
-      result.link = $(this)
+        result.link = $(this)
         .children("a")
         .attr("href");
 
